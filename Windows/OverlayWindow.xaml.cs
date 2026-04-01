@@ -7,7 +7,7 @@ using Brushes = System.Windows.Media.Brushes;
 using Color = System.Windows.Media.Color;
 using ScreenGrab.Services;
 
-namespace ScreenGrab;
+namespace ScreenGrab.Windows;
 
 public partial class OverlayWindow : Window
 {

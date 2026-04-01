@@ -2,6 +2,7 @@ using System.Drawing;
 using System.Windows;
 using System.Windows.Interop;
 using ScreenGrab.Services;
+using ScreenGrab.Windows;
 using Application = System.Windows.Application;
 using MessageBox = System.Windows.MessageBox;
 

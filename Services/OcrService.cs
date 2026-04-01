@@ -20,12 +20,12 @@ public class OcrService : IDisposable
 
     public OcrService()
     {
-        _scriptPath = Path.Combine(AppContext.BaseDirectory, "ocr_server.py");
+        _scriptPath = Path.Combine(AppContext.BaseDirectory, "Scripts", "ocr_server.py");
 
         // Fall back to project directory during development
         if (!File.Exists(_scriptPath))
         {
-            var devPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "ocr_server.py");
+            var devPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "Scripts", "ocr_server.py");
             if (File.Exists(devPath))
                 _scriptPath = Path.GetFullPath(devPath);
         }
