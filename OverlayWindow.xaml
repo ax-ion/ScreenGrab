@@ -1,0 +1,38 @@
+<Window x:Class="ScreenGrab.OverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Cursor="IBeam"
+        KeyDown="Window_KeyDown">
+    <Grid>
+        <!-- Screenshot background -->
+        <Image x:Name="BackgroundImage" Stretch="Fill" />
+
+        <!-- Canvas for word highlight overlays -->
+        <Canvas x:Name="WordCanvas" Background="Transparent"
+                MouseLeftButtonDown="Canvas_MouseLeftButtonDown"
+                MouseMove="Canvas_MouseMove"
+                MouseLeftButtonUp="Canvas_MouseLeftButtonUp" />
+
+        <!-- Selection rectangle visual -->
+        <Canvas x:Name="SelectionCanvas" IsHitTestVisible="False">
+            <Rectangle x:Name="SelectionRect"
+                       Fill="#220078D7"
+                       Stroke="#0078D7"
+                       StrokeThickness="1"
+                       Visibility="Collapsed" />
+        </Canvas>
+
+        <!-- Status bar -->
+        <Border Background="#CC333333" VerticalAlignment="Top" HorizontalAlignment="Center"
+                CornerRadius="0,0,8,8" Padding="16,6">
+            <TextBlock x:Name="StatusText" Foreground="White" FontSize="13" FontFamily="Segoe UI"
+                       Text="Drag to select text. Ctrl+C to copy. Escape to cancel." />
+        </Border>
+    </Grid>
+</Window>
